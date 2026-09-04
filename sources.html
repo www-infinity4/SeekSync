@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" data-avatar-site="seeksync">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SeekSync — Full Sources</title>
+  <meta name="description" content="Every YouTube source actually used in the SeekSync clip-sync reel, linked back to the original full-length video so you can watch it in full." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SeekSync — Full Sources" />
+  <meta property="og:description" content="Every clip in the SeekSync reel, linked back to its original full-length YouTube source." />
+  <meta property="og:image" content="assets/preview-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="assets/preview-card.png" />
+  <link rel="icon" href="assets/preview-card.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://www.youtube.com" crossorigin />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand__mark">∞</span>
+      <span class="brand__name">SeekSync</span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html">Sync Reel</a>
+      <a href="sources.html" class="active">Full Sources</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero hero--compact">
+      <div class="hero__copy">
+        <p class="hero__eyebrow">Watch the whole thing, not just the clip</p>
+        <h1>Every source SeekSync actually uses.</h1>
+        <p class="hero__lede">
+          The sync reel only ever plays short cues. This page links each one back to its full-length
+          YouTube upload — and to a live search you can use to verify or replace it — so nothing is
+          synced without a clear path back to the original.
+        </p>
+      </div>
+    </section>
+
+    <section class="sources" aria-labelledby="sources-heading">
+      <div class="section-heading">
+        <h2 id="sources-heading">Starter catalog sources</h2>
+        <p>13 public-domain titles. Starter references — verify before relying on them for production playback.</p>
+      </div>
+      <div id="sources-list" class="sources-list"></div>
+    </section>
+
+    <section class="sources" aria-labelledby="community-sources-heading">
+      <div class="section-heading">
+        <h2 id="community-sources-heading">Community-submitted sources</h2>
+        <p>Added through the Sync Console. Rights remain unresolved until a verified owner claims them.</p>
+      </div>
+      <div id="community-sources-list" class="sources-list"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>SeekSync streams from YouTube directly; nothing is downloaded, re-hosted, or stored here. Links open the original creator's upload.</p>
+    <p><a href="index.html">← Back to the sync reel</a></p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/user-sync.js"></script>
+  <script src="js/sources.js"></script>
+</body>
+</html>
