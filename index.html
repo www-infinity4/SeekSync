@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-avatar-site="seeksync">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SeekSync — Clip-Synced Classics &amp; the Infinity Coin Ledger</title>
+  <meta name="description" content="SeekSync clips and synchronizes 13 curated public-domain movies and cartoons, lets you add your own YouTube content to the reel, and pays every share into a shared Infinity Coin ledger." />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="SeekSync — Clip-Synced Classics &amp; the Infinity Coin Ledger" />
+  <meta property="og:description" content="13 curated titles, synced clip-by-clip, plus your own YouTube content — every share pays into the shared Infinity Coin ledger." />
+  <meta property="og:image" content="assets/preview-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="SeekSync — clip-synced classics, YouTube-linked sources, and an Infinity Coin ledger" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="assets/preview-card.png" />
+  <link rel="icon" href="assets/preview-card.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://www.youtube.com" crossorigin />
+  <link rel="dns-prefetch" href="https://www.youtube.com" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand__mark">∞</span>
+      <span class="brand__name">SeekSync</span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html" class="active">Sync Reel</a>
+      <a href="sources.html">Full Sources</a>
+    </nav>
+    <button id="unified-wallet-connect" class="wallet-pill" type="button">
+      <span id="unified-wallet-label">Connect Unified Wallet</span>
+      <small id="unified-wallet-detail">Use across Infinity websites</small>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__copy">
+        <p class="hero__eyebrow">Part of the Infinity / StarQuest ecosystem</p>
+        <h1>Thirteen classics, clipped and synced into one endless reel.</h1>
+        <p class="hero__lede">
+          SeekSync stitches short cues from 13 public-domain movies and cartoons into a continuously
+          looping, synchronized reel — pairing each clip with a companion score or track the way
+          Astraflix pairs film and album. Add your own YouTube content through the Sync Console below
+          and it joins the reel instantly. Every share of a clip accrues a provisional
+          <strong>$0.01 Infinity Coin</strong> payout to that content's current rights owner in the
+          shared ledger, and — if you connect your Unified Infinity Wallet — settles there too.
+        </p>
+        <p id="unified-wallet-status" class="hero__wallet-status">Connect before your shares route into the unified wallet.</p>
+      </div>
+    </section>
+
+    <section class="sync-stage" aria-label="Synchronized clip reel">
+      <div class="sync-stage__players">
+        <div class="player-frame player-frame--primary">
+          <div id="sync-primary-player"></div>
+          <span class="player-frame__label">Primary clip</span>
+        </div>
+        <div class="player-frame player-frame--companion">
+          <div id="sync-companion-player"></div>
+          <span class="player-frame__label">Synced companion</span>
+        </div>
+      </div>
+      <div class="sync-stage__controls">
+        <button id="sync-start" class="btn btn-primary" type="button">▶ Start Sync</button>
+        <button id="sync-restart" class="btn" type="button">⟲ Restart</button>
+        <button id="sync-next" class="btn" type="button">⏭ Next Clip</button>
+        <button id="sync-mute" class="btn btn-ghost" type="button">🔇 Unmute</button>
+        <button id="sync-stop" class="btn btn-ghost" type="button">■ Stop</button>
+        <div class="sync-stage__status">
+          <span id="now-playing">Press Start Sync to begin the reel.</span>
+          <span id="queue-count" class="queue-count">0 clips in the reel</span>
+        </div>
+      </div>
+      <p class="sync-stage__disclaimer">
+        Streams come directly from YouTube; no film or music is stored here. Source availability is not
+        guaranteed — a broken or region-locked clip is skipped automatically. Playback is a curated
+        approximation, not frame-locked synchronization.
+      </p>
+    </section>
+
+    <section class="catalog" aria-labelledby="catalog-heading">
+      <div class="section-heading">
+        <h2 id="catalog-heading">The 13-title starter catalog</h2>
+        <p>All public domain in the US. Full-length originals live on the <a href="sources.html">Full Sources</a> page.</p>
+      </div>
+      <div id="catalog-grid" class="catalog-grid"></div>
+    </section>
+
+    <section class="sync-console" aria-labelledby="console-heading">
+      <div class="section-heading">
+        <h2 id="console-heading">Sync Console — add your own content</h2>
+        <p>Paste a YouTube link, optionally pair it with a companion track, and it joins the live reel. Rights stay <strong>unresolved</strong> until claimed, exactly like the rest of the Infinity ledger.</p>
+      </div>
+      <div class="sync-console__grid">
+        <form id="user-sync-form" class="sync-console__form">
+          <label>Title
+            <input type="text" name="title" placeholder="What are you syncing?" required maxlength="120" />
+          </label>
+          <label>YouTube URL
+            <input type="url" name="url" placeholder="https://www.youtube.com/watch?v=..." required />
+          </label>
+          <label>Companion YouTube URL <span class="optional">(optional)</span>
+            <input type="url" name="companionUrl" placeholder="Score, commentary, or reaction track" />
+          </label>
+          <div class="sync-console__times">
+            <label>Clip start (sec)
+              <input type="number" name="start" min="0" value="0" />
+            </label>
+            <label>Clip end (sec)
+              <input type="number" name="end" min="1" value="30" />
+            </label>
+          </div>
+          <button type="submit" class="btn btn-primary">Queue into the AI sync system</button>
+          <p id="user-sync-status" class="sync-console__status" role="status"></p>
+        </form>
+        <div class="sync-console__queue">
+          <h3>Community queue</h3>
+          <ul id="user-queue-list" class="user-queue-list"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="ledger" aria-labelledby="ledger-heading">
+      <div class="section-heading">
+        <h2 id="ledger-heading">Infinity Coin ledger</h2>
+        <p>Every share is a provisional accrual — real settlement still needs a verified rights contract, exactly like StarQuest's catalog ledger.</p>
+      </div>
+      <div class="ledger__summary" id="ledger-total">$0.00 accrued · 0 shares</div>
+      <table class="ledger__table">
+        <thead>
+          <tr><th>Content</th><th>Current owner</th><th>Payout</th><th>Time</th></tr>
+        </thead>
+        <tbody id="ledger-body"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>SeekSync is a static, client-side experience. No movie or music files are stored here; streams resolve from YouTube at view time. Infinity Coin accruals are provisional until a verified rights contract settles them.</p>
+    <p><a href="sources.html">Browse every source used in full →</a></p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/ledger.js"></script>
+  <script src="js/user-sync.js"></script>
+  <script src="js/sync-engine.js"></script>
+  <script src="https://www-infinity4.github.io/Mint-For-Infinity/unified-wallet.js" defer></script>
+  <script src="js/wallet-integration.js" defer></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05070f"/>
+      <stop offset="55%" stop-color="#0c1230"/>
+      <stop offset="100%" stop-color="#1a1040"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffd873"/>
+      <stop offset="100%" stop-color="#ffb454"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="20%" r="70%">
+      <stop offset="0%" stop-color="#3a8dff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#3a8dff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <g opacity="0.5">
+    <circle cx="120" cy="90" r="2" fill="#ffffff"/>
+    <circle cx="260" cy="150" r="1.6" fill="#ffffff"/>
+    <circle cx="980" cy="80" r="2" fill="#ffffff"/>
+    <circle cx="1080" cy="200" r="1.4" fill="#ffffff"/>
+    <circle cx="60" cy="480" r="1.8" fill="#ffffff"/>
+    <circle cx="1140" cy="520" r="2" fill="#ffffff"/>
+    <circle cx="700" cy="60" r="1.4" fill="#ffffff"/>
+  </g>
+
+  <!-- Synced clip strips -->
+  <g transform="translate(90,150)">
+    <rect x="0" y="0" width="360" height="200" rx="14" fill="#0f1733" stroke="#3a8dff" stroke-opacity="0.5"/>
+    <rect x="18" y="18" width="324" height="164" rx="6" fill="#111a3d"/>
+    <polygon points="150,70 150,130 200,100" fill="#ffd873"/>
+    <text x="18" y="215" fill="#9fb4ff" font-family="Arial, sans-serif" font-size="16">Metropolis · 1927</text>
+  </g>
+  <g transform="translate(470,110)">
+    <rect x="0" y="0" width="260" height="150" rx="12" fill="#0f1733" stroke="#ffb454" stroke-opacity="0.5"/>
+    <rect x="14" y="14" width="232" height="122" rx="6" fill="#111a3d"/>
+    <polygon points="108,52 108,98 148,75" fill="#ffd873"/>
+    <text x="14" y="165" fill="#ffd873" font-family="Arial, sans-serif" font-size="14">+ synced companion score</text>
+  </g>
+  <g transform="translate(470,290)">
+    <rect x="0" y="0" width="260" height="70" rx="12" fill="#0f1733" stroke="#3a8dff" stroke-opacity="0.4"/>
+    <text x="16" y="30" fill="#9fb4ff" font-family="Arial, sans-serif" font-size="14">13 curated titles</text>
+    <text x="16" y="52" fill="#9fb4ff" font-family="Arial, sans-serif" font-size="14">∞ community-synced clips</text>
+  </g>
+
+  <text x="90" y="410" fill="#ffffff" font-family="Georgia, 'Times New Roman', serif" font-size="64" font-weight="700">SeekSync</text>
+  <text x="90" y="450" fill="url(#gold)" font-family="Arial, sans-serif" font-size="24" font-weight="600">Clip-synced classics · YouTube-linked sources · Infinity Coin ledger</text>
+
+  <g transform="translate(90,480)">
+    <rect x="0" y="0" width="230" height="46" rx="23" fill="#0f1733" stroke="#ffd873" stroke-opacity="0.6"/>
+    <text x="24" y="30" fill="#ffd873" font-family="Arial, sans-serif" font-size="18">⭐ 1¢ Infinity Coin / share</text>
+  </g>
+  <g transform="translate(340,480)">
+    <rect x="0" y="0" width="200" height="46" rx="23" fill="#0f1733" stroke="#3a8dff" stroke-opacity="0.6"/>
+    <text x="24" y="30" fill="#9fb4ff" font-family="Arial, sans-serif" font-size="18">🔗 Unified Wallet</text>
+  </g>
+
+  <text x="90" y="580" fill="#7789c9" font-family="Arial, sans-serif" font-size="16">Part of the Infinity / StarQuest ecosystem — www-infinity4</text>
+</svg>
