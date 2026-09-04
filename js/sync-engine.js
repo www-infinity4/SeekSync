@@ -168,6 +168,14 @@
 
   function next() { advance("manual-skip"); }
 
+  function jumpTo(index) {
+    if (!queue.length) return;
+    cueIndex = ((index % queue.length) + queue.length) % queue.length;
+    running = true;
+    playCue(currentCue());
+    pollForEnd();
+  }
+
   function toggleMute() {
     muted = !muted;
     if (!primaryPlayer) return muted;
@@ -177,5 +185,5 @@
 
   function queueLength() { return queue.length; }
 
-  global.SeekSyncSync = { init, start, restart, stop, next, toggleMute, currentCue, onCue, rebuildQueue, queueLength };
+  global.SeekSyncSync = { init, start, restart, stop, next, jumpTo, toggleMute, currentCue, onCue, rebuildQueue, queueLength };
 })(window);

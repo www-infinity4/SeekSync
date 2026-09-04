@@ -82,7 +82,7 @@
       const shareId = event.target.getAttribute("data-share");
       if (playId) {
         const idx = firstCueIndexFor(playId);
-        if (idx >= 0) { sync.stop(); sync.start(); for (let i = 0; i < idx; i++) sync.next(); }
+        if (idx >= 0) sync.jumpTo(idx);
       }
       if (shareId) {
         const title = catalog.titles.find((t) => t.id === shareId);

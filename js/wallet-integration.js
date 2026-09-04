@@ -37,7 +37,7 @@
     if (buttonLabel) buttonLabel.textContent = connected ? "Unified Wallet · " + connected.walletId.slice(-8) : "Connect Unified Wallet";
     if (buttonDetail) buttonDetail.textContent = connected ? "Shares now settle to your wallet" : "Use across Infinity websites";
     if (button) button.classList.toggle("connected", !!connected);
-    setStatus(connected ? "Every share now records a provisional Infinity Coin exchange to your unified wallet." : "Connect your Unified Wallet so shares can route into the shared StarCoin ledger.");
+    setStatus(connected ? "Every share now records a provisional Infinity Coin exchange to your unified wallet." : "Connect your Unified Wallet so shares can route into the shared Infinity Coin ledger.");
   }
 
   if (button) {
